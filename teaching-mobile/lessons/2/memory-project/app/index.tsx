@@ -9,7 +9,7 @@ import {
 } from "react-native";
 
 // TODO 1: troque string por "Relato" | "Lugar" | "Celebração".
-type CategoriaMemoria = string;
+type CategoriaMemoria = "Relato" | "Lugar" | "Celebração";
 
 interface Memoria {
   id: number;
@@ -17,6 +17,7 @@ interface Memoria {
   comunidade: string;
   categoria: CategoriaMemoria;
   resumo: string;
+  ano?: number;
   // TODO 2: acrescente ano como propriedade number opcional.
 }
 
@@ -50,7 +51,9 @@ type CartaoMemoriaProps = {
   selecionada: boolean;
   aoSelecionar: (id: number) => void;
 };
-
+function criarLegenda(memoria: Memoria): string {
+  return `${memoria.categoria} · ${memoria.comunidade}`;
+}
 function CartaoMemoria({
   memoria,
   selecionada,
@@ -63,9 +66,7 @@ function CartaoMemoria({
     >
       <Text style={styles.tituloCartao}>{memoria.titulo}</Text>
       {/* TODO 3: crie criarLegenda(memoria: Memoria): string e use aqui. */}
-      <Text style={styles.legenda}>
-        {memoria.categoria} · {memoria.comunidade}
-      </Text>
+     <Text style={styles.legenda}>{criarLegenda(memoria)}</Text>
       <Text style={styles.acao}>
         {selecionada ? "Toque para fechar" : "Toque para conhecer"}
       </Text>
@@ -82,7 +83,7 @@ export default function Index() {
 
   function alternarSelecao(id: number): void {
     // TODO 4: se o mesmo id já estiver selecionado, grave null.
-    setIdSelecionada(id);
+    setIdSelecionada(idSelecionada === id ? null : id);
   }
 
   return (
@@ -115,6 +116,10 @@ export default function Index() {
               {memoriaSelecionada.resumo}
             </Text>
             {/* TODO 5: mostre o ano somente quando ele existir. */}
+            {memoriaSelecionada.ano && (
+  <Text style={styles.textoDetalhes}>
+    Ano: {memoriaSelecionada.ano}
+  </Text>)}
           </View>
         ) : (
           <Text style={styles.vazio}>Nenhuma memória selecionada.</Text>
