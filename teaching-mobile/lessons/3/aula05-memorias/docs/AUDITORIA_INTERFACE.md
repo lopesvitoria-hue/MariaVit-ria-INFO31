@@ -1,24 +1,11 @@
-# M1 ‚Äî Scanner de Barreiras
-
-**Regra:** durante os primeiros 60 segundos, n√£o altere o c√≥digo. Use o app.
-
-| # | Barreira observada | Evid√™ncia concreta | Quem pode ser prejudicado? | Prioridade |
+| # | Barreira observada | EvidÍncia concreta | Quem pode ser prejudicado? | Prioridade |
 |---|---|---|---|---|
-| 1 |  |  |  | alta / m√©dia / baixa |
-| 2 |  |  |  | alta / m√©dia / baixa |
-| 3 |  |  |  | alta / m√©dia / baixa |
-| 4 |  |  |  | alta / m√©dia / baixa |
+| 1 | Falta de feedback ao toque | Ao pressionar, n„o h· mudanÁa visual | Usu·rios com deficiÍncia motora | alta |
+| 2 | AusÍncia de imagem de contexto | Interface sÛ com texto | Usu·rios com baixa letramento visual | alta |
+| 3 | Tamanho de alvo pequeno | Bot„o pode ter menos de 48◊48 dp | Usu·rios com deficiÍncia motora | alta |
+| 4 | Falta de sem‚ntica acessÌvel | Sem accessibilityLabel/Role | Usu·rios cegos | alta |
 
 ## Duas barreiras que vamos corrigir primeiro
 
-1. 
-2. 
-
-## Perguntas de apoio
-
-- O que parece acion√°vel?
-- O toque d√° uma resposta percept√≠vel?
-- Algum estado importante depende s√≥ de cor?
-- O conte√∫do est√° apertado ou sem hierarquia?
-- A a√ß√£o teria um nome compreens√≠vel para um leitor de tela?
-- O alvo de toque parece pequeno?
+1. Imagem de contexto (M2 - melhora legibilidade)
+2. Feedback visual e sem‚ntica (M3 - melhora operacionalidade)
