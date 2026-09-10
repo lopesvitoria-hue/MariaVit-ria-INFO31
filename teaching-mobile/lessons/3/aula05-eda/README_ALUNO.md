@@ -1,4 +1,4 @@
-# Trilha B — EDA / Permanência — Aula 5
+feat(aula-05): corrigir barreiras de interface e acessibilidade# Trilha B — EDA / Permanência — Aula 5
 
 ## Operação Interface Resgatada
 
